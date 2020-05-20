@@ -1,0 +1,20 @@
+install postgre sql zip file donwload
+data folder create 
+
+intiate database-
+initdb -D "data folder path" --username=postgres
+
+start the database using pgctl command
+pg_ctl -D "data folder path" start
+
+now create own users. for that open postgres interactive terminal using the command-
+psql --username=postgres --dbname=postgres --port=5432
+
+now we got the interactive terminal
+postgres# CREATE USER DEMODB with LOGIN SUPERUSER INHERIT  CREATEDB CREATEROLE PASSWORD 'DEMODB';
+
+Note- Semicolon must be present at the end of the line
+
+postgres# CREATE DATABASE "DEMODB" WITH OWNER=DEMODB;
+
+database created successfully
